@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-POWER-SOCKS | 高效能 SOCKS 代理</title>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --card: #12121a;
+      --accent: #00f0ff;
+      --accent2: #7b2fff;
+      --text: #e0e0e0;
+      --muted: #888;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,240,255,0.15) 0%, transparent 70%);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    header {
+      position: relative;
+      z-index: 10;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10,10,15,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,240,255,0.2);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--accent); }
+    .hero {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      background: linear-gradient(90deg, #fff, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      color: #000;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 0.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,240,255,0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+    }
+    section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      background: linear-gradient(90deg, var(--accent), #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(0,240,255,0.15);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+    }
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      position: relative;
+      z-index: 5;
+    }
+    @media (max-width: 600px) {
+      nav { display: none; }
+      .hero { padding: 5rem 1rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <header>
+    <div class="logo">K-POWER-SOCKS</div>
+    <nav>
+      <a href="#features">功能</a>
+      <a href="#about">關於</a>
+      <a href="https://github.com/kpwilliamchen/K-POWER-SOCKS">GitHub</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>K-POWER-SOCKS</h1>
+    <p>高速、安全、輕量的 SOCKS5 代理解決方案<br>為你的網路連線帶來真正的力量。</p>
+    <a href="https://github.com/kpwilliamchen/K-POWER-SOCKS" class="btn">開始使用</a>
+    <a href="#features" class="btn btn-outline">了解更多</a>
+  </section>
+
+  <section id="features">
+    <h2>核心功能</h2>
+    <div class="features">
+      <div class="card">
+        <h3>⚡ 極速傳輸</h3>
+        <p>優化的協定實作，低延遲、高吞吐量，適合高需求應用場景。</p>
+      </div>
+      <div class="card">
+        <h3>🔒 安全加密</h3>
+        <p>支援多種加密方式，保護你的流量不被竊聽與干擾。</p>
+      </div>
+      <div class="card">
+        <h3>🌐 跨平台支援</h3>
+        <p>Windows、macOS、Linux、Android 全平台覆蓋，輕鬆部署。</p>
+      </div>
+      <div class="card">
+        <h3>⚙️ 輕量高效</h3>
+        <p>極低資源佔用，即使在低階設備上也能穩定運行。</p>
+      </div>
+      <div class="card">
+        <h3>📊 規則分流</h3>
+        <p>靈活的規則系統，精準控制哪些流量走代理、哪些直連。</p>
+      </div>
+      <div class="card">
+        <h3>🚀 開源自由</h3>
+        <p>完全開源，歡迎貢獻與自訂，掌控你自己的網路。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>關於專案</h2>
+    <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <p>K-POWER-SOCKS 是一個專注於效能與簡潔的 SOCKS 代理專案。我們相信好的工具應該既強大又易用，讓任何人都能輕鬆建立安全、快速的網路通道。</p>
+      <p style="margin-top: 1.5rem; color: var(--muted);">專案正在積極開發中，歡迎在 GitHub 上關注與貢獻！</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 K-POWER-SOCKS · <a href="https://github.com/kpwilliamchen/K-POWER-SOCKS" style="color: var(--accent);">GitHub</a></p>
+  </footer>
+</body>
+</html>
